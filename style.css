@@ -1,0 +1,365 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: roboto, sans-serif;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/*=============================================
+=                   header                   =
+=============================================*/
+header{
+    margin: auto;
+    padding: 25px 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: right;
+}
+
+.logo{
+    /* width: 140px; */
+    cursor: pointer;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+}
+/*============  End of header  =============*/
+
+/*=============================================
+=                hero section                =
+=============================================*/
+
+.hero-section{
+    background-image: url(images/intro-slide1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -120px;
+}
+
+.hero-content img {
+    margin-bottom: 30px;
+}
+
+h1{
+    font-size: 100px;
+    line-height: 90px;
+    letter-spacing: 15px;
+    color: #eaeaea;
+    font-weight: 300;
+    text-shadow: 10px 10px rgba(57, 53, 53, 0.1);
+}
+
+/*=========  End of hero section  ==========*/
+
+/*=============================================
+=                   songs                   =
+=============================================*/
+
+.songs {
+    padding: 50px 50px 100px;
+    background-color: #111;
+}
+
+.songs .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.song-list {
+    width: 100%;
+}
+
+.song {
+    /* width: 100%; */
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    background-color: #1d1d1d;
+    padding: 15px 30px;
+    padding-left: 20px;
+    border-radius: 20px;
+    margin-bottom: 3px;
+}
+
+.song > img {
+    width: 50px;
+    height: auto;
+    margin-right: 0px;
+    visibility: hidden;
+}
+
+.song .about {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 1140px;
+    margin-left: -40px;
+    transition: all 0.1s ease-in-out;
+}
+
+.song .about img {
+    height: 62px;
+    width: 62px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.song-details {
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.title-artist {
+    width: 100%;
+    max-width: 300px;
+}
+
+.song-title {
+    color: white;
+}
+
+.song-time {
+    color: rgb(179, 179, 179);
+}
+
+.song-artist {
+    font-size: 14px;
+    color: rgb(179, 179, 179);
+    margin-top: 3px;
+}
+
+/* hover and active song effects */
+.song:hover,
+.song.active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.song:hover > img,
+.song.active > img {
+    visibility: visible;
+    margin-right: 10px;
+}
+
+.song:hover .about,
+.song.active .about {
+    margin-left: 10px;
+}
+
+.song:hover .song-title,
+.song.active .song-title {
+    color: #ed2b45;
+}
+
+.song:hover .song-artist,
+.song:hover .song-time,
+.song.active .song-artist,
+.song.active .song-time {
+    color: white;
+}
+
+/*============  End of songs  =============*/
+
+/*=============================================
+=                Music Player                =
+=============================================*/
+.music-player {
+    background-color: #151518;
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.music-player .container {
+    margin: 0px auto;
+    padding: 0 20px;
+    display: flex;
+    width: 100%;
+    max-width: 880px;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+}
+
+.player-details {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 300px;
+}
+
+.player-details img {
+    height: 62px;
+    width: 62px;
+    object-fit: cover;
+    border-radius: 20px;
+    display: none;
+    margin-right: 20px;
+}
+
+.title {
+    padding: 20px 0;
+    width: 100%;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.title p {
+    letter-spacing: 1px;
+}
+
+.player-title {
+    color: white;
+    font-weight: 500;
+    line-height: 16px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    /* text-transform: uppercase; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 180px;
+}
+
+.player-author {
+    color: #ccc;
+    font-size: 13px;
+    line-height: 12px;
+    font-weight: 400;
+    /* margin-left: 10px; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 180px;
+}
+
+.btns {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+    padding-left: 20px;
+    border-left: 1px solid #333;
+}
+
+.btns div svg {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+}
+
+.btns img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.play-pause {
+    background-color: #ed2b45;
+    border-radius: 50%;
+    padding: 10px;
+    height: 35px;
+    width: 35px;
+}
+
+.pause {
+    display: none;
+}
+
+.previous {
+    margin-right: 15px;
+}
+
+.next {
+    margin-left: 15px;
+}
+
+.timer {
+    padding: 20px 0;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.time {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.time-progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #2A2A2A;
+    margin: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-radius: inherit;
+    background-color: #ed2b45;
+}
+
+.progress::before {
+    right: 0;
+    width: 8px;
+    content: " ";
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #ed2b45;
+}
+
+/*=========  End of Music Player  ==========*/
+
